@@ -55,6 +55,11 @@ class TileBag
   def getLength
     @tiles.length
   end
+  
+  def get_tiles
+    return @tiles
+  end
+  
 end
 
 test = TileBag.new()
@@ -65,4 +70,69 @@ puts drwTile
 puts test.getLength()
 puts TileBag.points_for(drwTile)
 
+    a=0; b=0; c=0; d=0; e=0; f=0; g=0; h=0; i=0; j=0; k=0; l=0; m=0; n=0; o=0; p=0; q=0;
+    r=0; s=0; t=0; u=0; v=0; w=0; x=0; y=0; z=0;
+    puts "a is #{a}"
+    puts e
+    puts f
+    puts y
+    test.get_tiles.each do |tile|
+      case tile
+      when :A
+        a += 1
+      when :B
+        b += 1
+      when :C
+        c += 1
+      when :D
+        d += 1
+      when :E
+        e += 1
+      when :F
+        f += 1
+      when :G
+        g += 1
+      when :H
+        h += 1
+      when :I
+        i += 1
+      when :J
+        j += 1
+      when :K
+        k += 1
+      when :L
+        l += 1
+      when :M
+        m += 1
+      when :N
+        n += 1
+      when :O
+        o += 1
+      when :P
+        p += 1
+      when :Q
+        q += 1
+      when :R
+        r += 1
+      when :S
+        s += 1
+      when :T
+        t += 1
+      when :U
+        u += 1
+      when :V
+        v += 1
+      when :W
+        w += 1
+      when :X
+        x += 1
+      when :Y
+        y += 1
+      when :Z
+        z += 1
+      end
+    end
+   puts a
+   puts b
+  
 

@@ -51,8 +51,12 @@ class TileBag
     points[tile]
   end
   
-  def getLength
+  def get_length
     @tiles.length
+  end
+  
+  def get_tiles
+    return @tiles
   end
 end
   
