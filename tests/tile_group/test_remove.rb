@@ -18,7 +18,7 @@ class TileGroup::TestRemove < Minitest::Test
     @group.append(:B)
     @group.append(:C)
     @group.remove(:A)
-    assert_equal [:B, :C], @group.get_tiles
+    assert_equal [:B, :C], @group.tiles
   end
   
   def test_remove_last_tile_from_many
@@ -26,7 +26,7 @@ class TileGroup::TestRemove < Minitest::Test
     @group.append(:B)
     @group.append(:C)
     @group.remove(:C)
-    assert_equal [:A, :B], @group.get_tiles
+    assert_equal [:A, :B], @group.tiles
   end
   
   def test_remove_middle_tile_from_many
@@ -34,7 +34,7 @@ class TileGroup::TestRemove < Minitest::Test
     @group.append(:B)
     @group.append(:C)
     @group.remove(:B)
-    assert_equal [:A, :C], @group.get_tiles
+    assert_equal [:A, :C], @group.tiles
   end
   
   def test_remove_multiple_tiles
@@ -47,7 +47,7 @@ class TileGroup::TestRemove < Minitest::Test
     @group.remove(:B)
     @group.remove(:C)
     @group.remove(:D)
-    assert_equal [:A, :E], @group.get_tiles
+    assert_equal [:A, :E], @group.tiles
   end
   
   def test_make_sure_duplicates_are_not_removed
@@ -58,7 +58,7 @@ class TileGroup::TestRemove < Minitest::Test
     @group.append(:E)
     
     @group.remove(:A)
-    assert_equal [:B, :A, :A, :E], @group.get_tiles
+    assert_equal [:B, :A, :A, :E], @group.tiles
   end
   
 end

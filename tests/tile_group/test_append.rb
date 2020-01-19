@@ -9,21 +9,21 @@ class TileGroup::TestAppend < Minitest::Test
   
   def test_append_one_tile
     @group.append(:A)
-    assert_equal [:A], @group.get_tiles
+    assert_equal [:A], @group.tiles
   end
   
   def test_append_many_tiles
     @group.append(:A)
     @group.append(:B)
     @group.append(:C)
-    assert_equal [:A, :B, :C], @group.get_tiles
+    assert_equal [:A, :B, :C], @group.tiles
   end
   
   def test_append_duplicate_tiles
     @group.append(:A)
     @group.append(:A)
     @group.append(:A)
-    assert_equal [:A, :A, :A], @group.get_tiles
+    assert_equal [:A, :A, :A], @group.tiles
   end
 
 end

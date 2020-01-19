@@ -1,5 +1,6 @@
 class TileGroup
-
+  attr_accessor :tiles
+  
   def initialize()
     @tiles = []
   end
@@ -22,8 +23,5 @@ class TileGroup
     return @tiles.empty?
   end
   
-  def get_tiles
-    return @tiles
-  end
   
 end
