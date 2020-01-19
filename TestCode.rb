@@ -63,19 +63,19 @@ class TileBag
 end
 
 test = TileBag.new()
-puts test.empty?()
-puts test.getLength()
+#puts test.empty?()
+#puts test.getLength()
 drwTile = test.draw_tile()
-puts drwTile
-puts test.getLength()
-puts TileBag.points_for(drwTile)
+#puts drwTile
+#puts test.getLength()
+#puts TileBag.points_for(drwTile)
 
     a=0; b=0; c=0; d=0; e=0; f=0; g=0; h=0; i=0; j=0; k=0; l=0; m=0; n=0; o=0; p=0; q=0;
     r=0; s=0; t=0; u=0; v=0; w=0; x=0; y=0; z=0;
-    puts "a is #{a}"
-    puts e
-    puts f
-    puts y
+   # puts "a is #{a}"
+    #puts e
+    #puts f
+    #puts y
     test.get_tiles.each do |tile|
       case tile
       when :A
@@ -132,7 +132,12 @@ puts TileBag.points_for(drwTile)
         z += 1
       end
     end
-   puts a
-   puts b
-  
+    
+ def hand
+    hand = ""
+    fake = []    
+    fake.each {|tile| hand += tile.to_s}
+    puts hand
+ end
+ hand()
 

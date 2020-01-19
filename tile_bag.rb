@@ -39,7 +39,7 @@ class TileBag
     @tiles.empty?
   end
   
-   def self.points_for(tile)
+  def self.points_for(tile)
     points = {
       E: 1, A: 1, I: 1, O: 1, N: 1, R: 1, T: 1, L: 1, S: 1, U: 1,
       D: 2, G: 2,
