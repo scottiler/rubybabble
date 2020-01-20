@@ -3,7 +3,6 @@ require_relative "../../word.rb"
 
 class Word::TestScore < Minitest::Test
   def setup
-   # @group = TileGroup.new
     @testWord = Word.new
   end
   
@@ -13,7 +12,21 @@ class Word::TestScore < Minitest::Test
   
   def test_score_a_one_tile_word
     @testWord.append(:Z)
-    assert_equal [:Z], @testWord.tiles
+    assert_equal 10, @testWord.score
+  end
+  
+  def test_score_a_word_with_multiple_different_tiles
+    @testWord.append(:B)
+    @testWord.append(:O)
+    @testWord.append(:Y)
+    assert_equal 8, @testWord.score
+  end
+  
+  def test_score_a_word_with_recurring_tiles
+    @testWord.append(:Z)
+    @testWord.append(:Z)
+    @testWord.append(:Z)
+    assert_equal 30, @testWord.score
   end
   
 end

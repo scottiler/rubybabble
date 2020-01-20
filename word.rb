@@ -1,22 +1,15 @@
-require_relative "tile_group.rb"
 
 class Word < TileGroup
   
   
-  def initialize
-     
-    #@word = tiles
+  def initializeremove_word(text)
     super()
   end
   
   def score
     score = 0
-    tiles.each {|tile| score += points_for(tile)}
+    tiles.each {|tile| score += TileBag.points_for(tile)}
     return score
   end
-  
-  def get
-    return tiles
-  end
-  
+    
 end
