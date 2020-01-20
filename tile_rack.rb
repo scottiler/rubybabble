@@ -4,7 +4,7 @@ class TileRack < TileGroup
   MAX_SIZE = 7
 
   def initialize
-    super()
+    super
   end
 
   def number_of_tiles_needed
