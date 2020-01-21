@@ -22,8 +22,8 @@ class Babble
       populate_rack
       display_rack
       get_guess
+      check_for_quit
       if !@quit
-        check_for_quit
         check_for_correct_tiles
       end
     end
@@ -31,16 +31,17 @@ class Babble
 
   private
   def populate_rack
-    while @rack.number_of_tiles_needed > 0
+    while @rack.number_of_tiles_needed > 0 && !@bag.empty?
       @rack.append(@bag.draw_tile)
+    end
+    if @bag.empty?
+      print "\nThere are no more tiles\n"
     end
   end
 
   private
   def display_rack
-    print "\n"
-    print"THE TILES: #{@rack.tiles}"
-    print "\n"
+    print"\nTHE TILES: #{@rack.tiles}\n"
   end
 
   private
@@ -57,7 +58,7 @@ class Babble
     if Spellchecker::check(@testWord)[0][:correct]
       return true
     else
-      print "Not a valid word"
+      print "\nNot a valid word\n"
     end
     false
   end
@@ -75,7 +76,7 @@ class Babble
         print "You made a WORD for #{wordScore} points\n\n"
         @testWord == ""
       else
-        print "Not enough tiles"
+        print "\nNot enough tiles\n"
       end
     end
 
@@ -83,10 +84,8 @@ class Babble
 
   private
   def check_for_quit
-  #  @testWord.upcase.chars.each {|letter| @word.append(letter.to_sym)}
-  #  print @word.score()
     if @testWord.eql?("quit")
-      print "Thanks for playing, total score: #{@score}\n"
+      print "\nThanks for playing, total score: #{@score}\n"
       @quit = true
     end
   end
